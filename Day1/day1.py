@@ -19,7 +19,6 @@ def grabInt(got):
                 letterList = [letterList[len(letterList)-1]]
             else:
                 None
-    print(numbersList[0]*10 + numbersList[(len(numbersList)-1)])
     return (numbersList[0]*10 + numbersList[(len(numbersList)-1)])
 
 import fileinput
@@ -30,4 +29,5 @@ answer = 0
 
 for line in fileinput.input(files= 'Day1/input.txt'):
     answer += grabInt(line)
-    print(answer)
+
+print(answer)
