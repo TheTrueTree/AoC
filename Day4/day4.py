@@ -42,7 +42,6 @@ for line in fileinput.input("Day4/input.txt"):
     winningNumbersTot.append(winningNumbers)
 
 multipliers = [1] * len(winningNumberCounts)
-
 score = 0
 
 for y in range(0, len(multipliers)):
@@ -51,8 +50,15 @@ for y in range(0, len(multipliers)):
         for z in range(y+1, y+winningNumberCounts[y]+1):
             if(z < len(multipliers)):
                 multipliers[z] += 1
+    # print(multipliers)
+    # print(winningNumbersTot[y], ' | ', numbersTot[y])
+    # print(winningNumberCounts[y])
     thisScore *= multipliers[y]
     score += thisScore
 
-print(score)
+scratchcards = 0
+for ad in range(0, len(multipliers)):
+    scratchcards += int(multipliers[ad])
+
+print(scratchcards)
 
